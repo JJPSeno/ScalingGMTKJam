@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://deyqfiqqlobte"]
 
-[ext_resource type="Texture2D" uid="uid://tj8smkg1m4gl" path="res://icon.svg" id="1_fowje"]
+[ext_resource type="Script" path="res://Cards/card.gd" id="1_jpkgm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q51jr"]
 bg_color = Color(0, 0.786167, 0.89, 1)
@@ -16,6 +16,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Card" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
+script = ExtResource("1_jpkgm")
 
 [node name="CardContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -48,7 +49,6 @@ theme_override_constants/separation = 20
 
 [node name="TextureRect" type="TextureRect" parent="CardContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_fowje")
 
 [node name="Label" type="Label" parent="CardContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
