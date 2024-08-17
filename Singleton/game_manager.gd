@@ -1,6 +1,6 @@
 extends Node
 
-@export var isDebug = true
+@export var isDebug := true
 
 func _process(_delta)-> void:
 	if isDebug:
