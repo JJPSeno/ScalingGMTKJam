@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://cxgg8uj06o5e3"]
+[gd_scene load_steps=4 format=3 uid="uid://cxgg8uj06o5e3"]
+
+[ext_resource type="PackedScene" uid="uid://c6f01171l21ov" path="res://Player/player.tscn" id="1_wvd8g"]
+[ext_resource type="PackedScene" uid="uid://cvu5yplxtrina" path="res://Boss/boss.tscn" id="2_nkgsw"]
+[ext_resource type="PackedScene" uid="uid://bva07mlsyq55k" path="res://Player_Projectile/player_projectile.tscn" id="3_35g4l"]
 
 [node name="VertSlice" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_wvd8g")]
+position = Vector2(-212, 54)
+
+[node name="Boss" parent="." instance=ExtResource("2_nkgsw")]
+position = Vector2(358, -60)
+
+[node name="PlayerProjectile" parent="." instance=ExtResource("3_35g4l")]
+position = Vector2(-100, 56)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bva07mlsyq55k"]
+
+[ext_resource type="Shader" path="res://Player_Projectile/player_projectile.gdshader" id="1_2ol6e"]
+[ext_resource type="Texture2D" uid="uid://tj8smkg1m4gl" path="res://icon.svg" id="1_t056a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v82dp"]
+shader = ExtResource("1_2ol6e")
+shader_parameter/speed = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5qaug"]
+radius = 57.85
+
+[node name="PlayerProjectile" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_v82dp")
+texture = ExtResource("1_t056a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5qaug")
