@@ -19,10 +19,11 @@ atlas = ExtResource("1_nbj14")
 region = Rect2(18, 48, 234, 116)
 
 [node name="Boss-1-sample" type="Node2D"]
+position = Vector2(0, -25)
 
 [node name="Claw Limb5" type="Sprite2D" parent="."]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
-position = Vector2(571, 249)
+position = Vector2(66, -44)
 rotation = 2.74119
 scale = Vector2(0.627132, 1.26021)
 texture = SubResource("AtlasTexture_b3n2t")
@@ -45,7 +46,7 @@ offset = Vector2(-4.145, 25.31)
 
 [node name="Claw Limb6" type="Sprite2D" parent="."]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
-position = Vector2(500, 256)
+position = Vector2(49, 0)
 rotation = 2.74119
 scale = Vector2(0.627132, 1.26021)
 texture = SubResource("AtlasTexture_b3n2t")
@@ -68,7 +69,7 @@ offset = Vector2(-4.145, 25.31)
 
 [node name="Claw Limb7" type="Sprite2D" parent="."]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
-position = Vector2(430, 259)
+position = Vector2(-75, -34)
 rotation = 2.74119
 scale = Vector2(0.627132, 1.26021)
 texture = SubResource("AtlasTexture_b3n2t")
@@ -91,9 +92,8 @@ offset = Vector2(-4.145, 25.31)
 
 [node name="Claw Limb8" type="Sprite2D" parent="."]
 modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(476, 226)
+position = Vector2(-29, -67)
 rotation = -0.364638
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_b3n2t")
 offset = Vector2(-36.04, 3.54)
 
@@ -110,14 +110,12 @@ texture = SubResource("AtlasTexture_bjmmc")
 offset = Vector2(-42.465, 0)
 
 [node name="Body" type="Sprite2D" parent="."]
-position = Vector2(519, 285)
+position = Vector2(14, -8)
 texture = SubResource("AtlasTexture_8jyxo")
 offset = Vector2(0, -55.96)
 
-[node name="Node2D" type="Node2D" parent="."]
-
 [node name="Claw Limb4" type="Sprite2D" parent="."]
-position = Vector2(591, 270)
+position = Vector2(86, -23)
 rotation = 2.74119
 scale = Vector2(0.627132, 1.26021)
 texture = SubResource("AtlasTexture_b3n2t")
@@ -139,7 +137,7 @@ texture = SubResource("AtlasTexture_hxucf")
 offset = Vector2(-4.145, 25.31)
 
 [node name="Claw Limb3" type="Sprite2D" parent="."]
-position = Vector2(539, 283)
+position = Vector2(34, -10)
 rotation = 2.74119
 scale = Vector2(0.627132, 1.26021)
 texture = SubResource("AtlasTexture_b3n2t")
@@ -161,7 +159,7 @@ texture = SubResource("AtlasTexture_hxucf")
 offset = Vector2(-4.145, 25.31)
 
 [node name="Claw Limb" type="Sprite2D" parent="."]
-position = Vector2(478.94, 287.646)
+position = Vector2(-26.06, -5.354)
 rotation = -3.54199
 scale = Vector2(0.627132, 1.26021)
 texture = SubResource("AtlasTexture_b3n2t")
@@ -183,9 +181,8 @@ texture = SubResource("AtlasTexture_hxucf")
 offset = Vector2(-4.145, 25.31)
 
 [node name="Claw Limb2" type="Sprite2D" parent="."]
-position = Vector2(458, 265)
+position = Vector2(-47, -28)
 rotation = -0.818118
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_b3n2t")
 offset = Vector2(-36.04, 3.54)
 
