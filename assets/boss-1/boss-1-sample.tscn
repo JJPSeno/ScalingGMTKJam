@@ -1,0 +1,202 @@
+[gd_scene load_steps=6 format=3 uid="uid://dh6s8y0wpp024"]
+
+[ext_resource type="Texture2D" uid="uid://btpv34y7dhsdx" path="res://assets/boss-1/boss-1.png" id="1_nbj14"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3n2t"]
+atlas = ExtResource("1_nbj14")
+region = Rect2(104, 198, 76, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxucf"]
+atlas = ExtResource("1_nbj14")
+region = Rect2(198, 196, 26, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjmmc"]
+atlas = ExtResource("1_nbj14")
+region = Rect2(8, 184, 90, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jyxo"]
+atlas = ExtResource("1_nbj14")
+region = Rect2(18, 48, 234, 116)
+
+[node name="Boss-1-sample" type="Node2D"]
+
+[node name="Claw Limb5" type="Sprite2D" parent="."]
+modulate = Color(0.366595, 0.366595, 0.366595, 1)
+position = Vector2(571, 249)
+rotation = 2.74119
+scale = Vector2(0.627132, 1.26021)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb3" type="Sprite2D" parent="Claw Limb5"]
+position = Vector2(-64.882, 11.0168)
+rotation = 1.41591
+scale = Vector2(0.749786, 2.00494)
+skew = 0.116237
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Claw Limb5/Claw Limb3"]
+position = Vector2(-64.0299, 7.89272)
+rotation = 1.71789
+scale = Vector2(0.793517, 0.793517)
+texture = SubResource("AtlasTexture_hxucf")
+offset = Vector2(-4.145, 25.31)
+
+[node name="Claw Limb6" type="Sprite2D" parent="."]
+modulate = Color(0.366595, 0.366595, 0.366595, 1)
+position = Vector2(500, 256)
+rotation = 2.74119
+scale = Vector2(0.627132, 1.26021)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb3" type="Sprite2D" parent="Claw Limb6"]
+position = Vector2(-64.882, 11.0168)
+rotation = 1.41591
+scale = Vector2(0.749786, 2.00494)
+skew = 0.116237
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Claw Limb6/Claw Limb3"]
+position = Vector2(-64.0299, 7.89272)
+rotation = 1.71789
+scale = Vector2(0.793517, 0.793517)
+texture = SubResource("AtlasTexture_hxucf")
+offset = Vector2(-4.145, 25.31)
+
+[node name="Claw Limb7" type="Sprite2D" parent="."]
+modulate = Color(0.366595, 0.366595, 0.366595, 1)
+position = Vector2(430, 259)
+rotation = 2.74119
+scale = Vector2(0.627132, 1.26021)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb3" type="Sprite2D" parent="Claw Limb7"]
+position = Vector2(-64.882, 11.0168)
+rotation = 1.41591
+scale = Vector2(0.749786, 2.00494)
+skew = 0.116237
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Claw Limb7/Claw Limb3"]
+position = Vector2(-64.0299, 7.89272)
+rotation = 1.71789
+scale = Vector2(0.793517, 0.793517)
+texture = SubResource("AtlasTexture_hxucf")
+offset = Vector2(-4.145, 25.31)
+
+[node name="Claw Limb8" type="Sprite2D" parent="."]
+modulate = Color(0.513233, 0.513233, 0.513233, 1)
+position = Vector2(476, 226)
+rotation = -0.364638
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb" type="Sprite2D" parent="Claw Limb8"]
+position = Vector2(-43.0977, 19.8139)
+rotation = 0.818118
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Front Claw" type="Sprite2D" parent="Claw Limb8/Claw Limb"]
+position = Vector2(-39, -4.76837e-07)
+rotation = -0.00605209
+texture = SubResource("AtlasTexture_bjmmc")
+offset = Vector2(-42.465, 0)
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(519, 285)
+texture = SubResource("AtlasTexture_8jyxo")
+offset = Vector2(0, -55.96)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Claw Limb4" type="Sprite2D" parent="."]
+position = Vector2(591, 270)
+rotation = 2.74119
+scale = Vector2(0.627132, 1.26021)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb3" type="Sprite2D" parent="Claw Limb4"]
+position = Vector2(-64.882, 11.0168)
+rotation = 1.41591
+scale = Vector2(0.749786, 2.00494)
+skew = 0.116237
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Claw Limb4/Claw Limb3"]
+position = Vector2(-64.0299, 7.89272)
+rotation = 1.71789
+scale = Vector2(0.793517, 0.793517)
+texture = SubResource("AtlasTexture_hxucf")
+offset = Vector2(-4.145, 25.31)
+
+[node name="Claw Limb3" type="Sprite2D" parent="."]
+position = Vector2(539, 283)
+rotation = 2.74119
+scale = Vector2(0.627132, 1.26021)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb3" type="Sprite2D" parent="Claw Limb3"]
+position = Vector2(-64.882, 11.0168)
+rotation = 1.41591
+scale = Vector2(0.749786, 2.00494)
+skew = 0.116237
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Claw Limb3/Claw Limb3"]
+position = Vector2(-64.0299, 7.89272)
+rotation = 1.71789
+scale = Vector2(0.793517, 0.793517)
+texture = SubResource("AtlasTexture_hxucf")
+offset = Vector2(-4.145, 25.31)
+
+[node name="Claw Limb" type="Sprite2D" parent="."]
+position = Vector2(478.94, 287.646)
+rotation = -3.54199
+scale = Vector2(0.627132, 1.26021)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb3" type="Sprite2D" parent="Claw Limb"]
+position = Vector2(-64.882, 11.0168)
+rotation = 1.41591
+scale = Vector2(0.749786, 2.00494)
+skew = 0.116237
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Claw Limb/Claw Limb3"]
+position = Vector2(-64.0299, 7.89272)
+rotation = 1.71789
+scale = Vector2(0.793517, 0.793517)
+texture = SubResource("AtlasTexture_hxucf")
+offset = Vector2(-4.145, 25.31)
+
+[node name="Claw Limb2" type="Sprite2D" parent="."]
+position = Vector2(458, 265)
+rotation = -0.818118
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Claw Limb" type="Sprite2D" parent="Claw Limb2"]
+position = Vector2(-43.0977, 19.8139)
+rotation = 0.818118
+texture = SubResource("AtlasTexture_b3n2t")
+offset = Vector2(-36.04, 3.54)
+
+[node name="Front Claw" type="Sprite2D" parent="Claw Limb2/Claw Limb"]
+position = Vector2(-39, -4.76837e-07)
+rotation = -0.00605209
+texture = SubResource("AtlasTexture_bjmmc")
+offset = Vector2(-42.465, 0)
