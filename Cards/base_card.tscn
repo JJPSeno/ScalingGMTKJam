@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://deyqfiqqlobte"]
+
+[ext_resource type="Script" path="res://Cards/base_card.gd" id="1_e7lnp"]
+[ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assets/Fonts/Gugi-Regular.ttf" id="2_r1scp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q51jr"]
+bg_color = Color(0, 0.404822, 0.89, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.786167, 0.89, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_h8cgu"]
+font = ExtResource("2_r1scp")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y0h1l"]
+font = ExtResource("2_r1scp")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6huw"]
+bg_color = Color(0, 0.786167, 0.89, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_35c5j"]
+font = ExtResource("2_r1scp")
+font_size = 24
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="BaseCard" type="Button"]
+offset_left = 363.0
+offset_top = 197.0
+offset_right = 371.0
+offset_bottom = 205.0
+script = ExtResource("1_e7lnp")
+
+[node name="CardContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(168, 302)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -132.0
+offset_right = 80.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="Panel" parent="CardContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q51jr")
+
+[node name="MarginContainer" type="MarginContainer" parent="CardContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NameLabel" type="Label" parent="CardContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_h8cgu")
+horizontal_alignment = 1
+
+[node name="FriendSprite" type="TextureRect" parent="CardContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="CardContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_y0h1l")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -167.0
+offset_right = 104.0
+offset_bottom = -127.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j6huw")
+
+[node name="CostLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 33.0
+label_settings = SubResource("LabelSettings_35c5j")
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

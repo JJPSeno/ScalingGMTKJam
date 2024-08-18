@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkgshedt2f77w"]
 
-[ext_resource type="Script" path="res://UI/popup_text.gd" id="1_ghbf1"]
-[ext_resource type="LabelSettings" uid="uid://6mk6jn7s1776" path="res://UI/damage_label_settings.tres" id="2_4ki4w"]
+[ext_resource type="Script" path="res://UI/popup_text/popup_text.gd" id="1_ghbf1"]
+[ext_resource type="LabelSettings" uid="uid://6mk6jn7s1776" path="res://UI/popup_text/damage_label_settings.tres" id="2_4ki4w"]
 
 [node name="PopupText" type="Control"]
 layout_mode = 3

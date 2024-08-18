@@ -4,7 +4,7 @@ extends Control
 var damage : int:
 	set = set_damage
 
-var label_settings: LabelSettings = preload("res://UI/damage_label_settings.tres")
+var label_settings: LabelSettings = preload("res://UI/popup_text/damage_label_settings.tres")
 
 #region testing variables
 var cooldown := 0.1
