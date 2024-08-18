@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0n6fp053mdjm"]
+
+[ext_resource type="Texture2D" uid="uid://dcftsq6bdlh35" path="res://Assets/sfx/lazur.png" id="1_a14pa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psewc"]
+atlas = ExtResource("1_a14pa")
+region = Rect2(16, 4, 88, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrj5i"]
+atlas = ExtResource("1_a14pa")
+region = Rect2(122, 80, 142, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at8w7"]
+atlas = ExtResource("1_a14pa")
+region = Rect2(282, 80, 68, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x6eo"]
+atlas = ExtResource("1_a14pa")
+region = Rect2(124, 266, 140, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3j8e"]
+atlas = ExtResource("1_a14pa")
+region = Rect2(282, 266, 68, 86)
+
+[node name="Lazur" type="Node2D"]
+
+[node name="Modulate Container" type="Node2D" parent="."]
+modulate = Color(0, 0.916895, 0.929381, 1)
+
+[node name="Head SFX" type="Sprite2D" parent="Modulate Container"]
+texture_repeat = 3
+texture = SubResource("AtlasTexture_psewc")
+
+[node name="Head Outie" type="Sprite2D" parent="Modulate Container"]
+texture_repeat = 3
+position = Vector2(89, 0)
+texture = SubResource("AtlasTexture_wrj5i")
+
+[node name="Tail Outie" type="Sprite2D" parent="Modulate Container"]
+position = Vector2(2523.75, 0)
+scale = Vector2(69.5074, 1)
+texture = SubResource("AtlasTexture_at8w7")
+region_rect = Rect2(0, 0, 1116, 168)
+
+[node name="Base Color Container" type="Node2D" parent="."]
+
+[node name="Head Innie" type="Sprite2D" parent="Base Color Container"]
+texture_repeat = 3
+position = Vector2(89, 0)
+texture = SubResource("AtlasTexture_1x6eo")
+
+[node name="Tail Innie" type="Sprite2D" parent="Base Color Container"]
+position = Vector2(2523.75, 0)
+scale = Vector2(69.5074, 1)
+texture = SubResource("AtlasTexture_o3j8e")
+region_rect = Rect2(0, 0, 1116, 168)
