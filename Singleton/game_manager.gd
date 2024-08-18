@@ -33,7 +33,7 @@ var friends_dictionary = {
 
 enum BOSSES {CRAB, DRAGON}
 
-# element interface is{ "type": FRIEND_TYPES, "position": Vector2 }
+# element interface is { "type": FRIEND_TYPES, "position": Vector2 }
 var pipeline_queue = []
 
 var current_damage := 0
@@ -61,14 +61,6 @@ func generate_friend(type: int) -> Friend:
 	return_friend.friend_type = type
 	return_friend.sprite = friends_dictionary[type].sprite
 	return return_friend
-
-
-func run_full_pipeline():
-	current_damage = 0
-	prints("pileline queue: ", pipeline_queue)
-	while pipeline_queue.size() > 0:
-		run_pipeline_step()
-	prints("current damage: ", current_damage)
 
 
 func run_pipeline_step():

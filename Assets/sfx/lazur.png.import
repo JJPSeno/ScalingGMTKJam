@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c35720b6tp0jd"
-path="res://.godot/imported/bazookaneer.png-bfffc2b64932873a53cf3ce45b06a030.ctex"
+uid="uid://dcftsq6bdlh35"
+path="res://.godot/imported/lazur.png-325f00830867a3040ec6da98e526e979.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bazookaneer.png"
-dest_files=["res://.godot/imported/bazookaneer.png-bfffc2b64932873a53cf3ce45b06a030.ctex"]
+source_file="res://Assets/sfx/lazur.png"
+dest_files=["res://.godot/imported/lazur.png-325f00830867a3040ec6da98e526e979.ctex"]
 
 [params]
 

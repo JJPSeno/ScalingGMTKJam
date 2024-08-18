@@ -5,12 +5,12 @@ enum FRIEND_TYPES {ADDING, MULTIPLYING}
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var friend_type : FRIEND_TYPES
-var sprite 
+var sprite:Texture2D
 
 
 func _ready() -> void:
-	sprite_2d.texture = sprite
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+    sprite_2d.texture = sprite
+    
 func _process(delta: float) -> void:
-	pass
+    var size = sprite_2d.texture.get_size() 
+    sprite_2d.position = Vector2(0, -size.y)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://deyqfiqqlobte"]
+[gd_scene load_steps=9 format=3 uid="uid://deyqfiqqlobte"]
 
 [ext_resource type="Script" path="res://Cards/base_card.gd" id="1_e7lnp"]
 [ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assets/Fonts/Gugi-Regular.ttf" id="2_r1scp"]
+[ext_resource type="Texture2D" uid="uid://4xpe5xrkq8vd" path="res://Assets/witch.png" id="3_5s86w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q51jr"]
 bg_color = Color(0, 0.404822, 0.89, 1)
@@ -34,65 +35,143 @@ font_size = 24
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[node name="BaseCard" type="Button"]
-offset_left = 363.0
-offset_top = 197.0
-offset_right = 371.0
-offset_bottom = 205.0
+[node name="Base Card Container" type="Control" node_paths=PackedStringArray("transformee", "name_label", "friend_sprite", "description_label", "cost_label")]
+clip_contents = true
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_e7lnp")
+transformee = NodePath("Transform Container")
+name_label = NodePath("Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer/NameLabel")
+friend_sprite = NodePath("Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer/Picture Frame/FriendSprite")
+description_label = NodePath("Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer/Control/DescriptionLabel")
+cost_label = NodePath("Transform Container/BaseCard/Cost Panel/CostLabel")
 
-[node name="CardContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(168, 302)
+[node name="Transform Container" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = -132.0
-offset_right = 80.0
-offset_bottom = 131.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="Panel" parent="CardContainer"]
-layout_mode = 2
+[node name="BaseCard" type="Button" parent="Transform Container"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -150.0
+offset_right = 100.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+keep_pressed_outside = true
+
+[node name="Background" type="Panel" parent="Transform Container/BaseCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q51jr")
 
-[node name="MarginContainer" type="MarginContainer" parent="CardContainer"]
+[node name="CardContainer" type="MarginContainer" parent="Transform Container/BaseCard"]
+custom_minimum_size = Vector2(168, 302)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Transform Container/BaseCard/CardContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CardContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Transform Container/BaseCard/CardContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="NameLabel" type="Label" parent="CardContainer/MarginContainer/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "This is a label"
 label_settings = SubResource("LabelSettings_h8cgu")
 horizontal_alignment = 1
 
-[node name="FriendSprite" type="TextureRect" parent="CardContainer/MarginContainer/VBoxContainer"]
+[node name="Picture Frame" type="Control" parent="Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 145)
 layout_mode = 2
+mouse_filter = 2
 
-[node name="DescriptionLabel" type="Label" parent="CardContainer/MarginContainer/VBoxContainer"]
+[node name="FriendSprite" type="TextureRect" parent="Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer/Picture Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_5s86w")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
+
+[node name="DescriptionLabel" type="Label" parent="Transform Container/BaseCard/CardContainer/MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is a card description"
 label_settings = SubResource("LabelSettings_y0h1l")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Cost Panel" type="Panel" parent="Transform Container/BaseCard"]
+visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = -167.0
 offset_right = 104.0
 offset_bottom = -127.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j6huw")
 
-[node name="CostLabel" type="Label" parent="Panel"]
+[node name="CostLabel" type="Label" parent="Transform Container/BaseCard/Cost Panel"]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 40.0
@@ -100,6 +179,6 @@ offset_bottom = 33.0
 label_settings = SubResource("LabelSettings_35c5j")
 horizontal_alignment = 1
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="button_up" from="Transform Container/BaseCard" to="." method="_on_pressed"]
+[connection signal="mouse_entered" from="Transform Container/BaseCard" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Transform Container/BaseCard" to="." method="_on_mouse_exited"]

@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://di4jkdekefn03"]
+[gd_scene load_steps=3 format=3 uid="uid://di4jkdekefn03"]
 
 [ext_resource type="Script" path="res://Friends/base_friend.gd" id="1_t66tq"]
+[ext_resource type="Texture2D" uid="uid://4xpe5xrkq8vd" path="res://Assets/witch.png" id="2_vgv4n"]
 
 [node name="BaseFriend" type="Node2D"]
 script = ExtResource("1_t66tq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vgv4n")
+centered = false
