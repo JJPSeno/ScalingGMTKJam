@@ -39,6 +39,7 @@ offset_left = 363.0
 offset_top = 197.0
 offset_right = 371.0
 offset_bottom = 205.0
+keep_pressed_outside = true
 script = ExtResource("1_e7lnp")
 
 [node name="CardContainer" type="MarginContainer" parent="."]
@@ -100,6 +101,6 @@ offset_bottom = 33.0
 label_settings = SubResource("LabelSettings_35c5j")
 horizontal_alignment = 1
 
+[connection signal="button_up" from="." to="." method="_on_pressed"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -18,11 +18,7 @@ func _ready() -> void:
     friend_sprite.texture = sprite
     description_label.text = description
     cost_label.text = cost
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-    pass
-
+    name = str(card_name, " - ", randf())
 
 func _on_pressed() -> void:
     GameManager.emit_signal("set_up_card",card_type)
