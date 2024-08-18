@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dik6pjwa24674"
-path="res://.godot/imported/road marking.png-6d2df0a1b2f3cdcf56a0b6b4813e829d.ctex"
+uid="uid://dcf3k6i0d55f7"
+path="res://.godot/imported/boss-2.png-df4fbaa6541ef067e0dc8a985eaa6fab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/City Background/road marking.png"
-dest_files=["res://.godot/imported/road marking.png-6d2df0a1b2f3cdcf56a0b6b4813e829d.ctex"]
+source_file="res://Assetsz/boss-2/boss-2.png"
+dest_files=["res://.godot/imported/boss-2.png-df4fbaa6541ef067e0dc8a985eaa6fab.ctex"]
 
 [params]
 

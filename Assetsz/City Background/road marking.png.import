@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxnbgjpajt1r4"
-path="res://.godot/imported/City Background.png-683145fa30ae771cd2d0124b672ebe95.ctex"
+uid="uid://dik6pjwa24674"
+path="res://.godot/imported/road marking.png-410bba551dee58f80aff0a26fd1c2f47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/City Background/City Background.png"
-dest_files=["res://.godot/imported/City Background.png-683145fa30ae771cd2d0124b672ebe95.ctex"]
+source_file="res://Assetsz/City Background/road marking.png"
+dest_files=["res://.godot/imported/road marking.png-410bba551dee58f80aff0a26fd1c2f47.ctex"]
 
 [params]
 

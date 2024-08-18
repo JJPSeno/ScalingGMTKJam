@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dai2mj0uve8j3"]
 
-[ext_resource type="Texture2D" uid="uid://cf5dn865g0m0o" path="res://assets/City Background/Sky.png" id="1_t5u8h"]
-[ext_resource type="Texture2D" uid="uid://cxnbgjpajt1r4" path="res://assets/City Background/City Background.png" id="2_yqq8x"]
-[ext_resource type="Texture2D" uid="uid://bygk20l5q3apq" path="res://assets/City Background/City Foreground.png" id="3_yb71q"]
-[ext_resource type="Texture2D" uid="uid://dik6pjwa24674" path="res://assets/City Background/road marking.png" id="4_db1sq"]
-[ext_resource type="PackedScene" uid="uid://dh6s8y0wpp024" path="res://assets/boss-1/boss-1.tscn" id="5_lly8d"]
-[ext_resource type="Texture2D" uid="uid://pq5mkvc0wqb6" path="res://assets/hero.png" id="6_rwma0"]
+[ext_resource type="Texture2D" uid="uid://cf5dn865g0m0o" path="res://Assetsz/City Background/Sky.png" id="1_t5u8h"]
+[ext_resource type="Texture2D" uid="uid://cxnbgjpajt1r4" path="res://Assetsz/City Background/City Background.png" id="2_yqq8x"]
+[ext_resource type="Texture2D" uid="uid://bygk20l5q3apq" path="res://Assetsz/City Background/City Foreground.png" id="3_yb71q"]
+[ext_resource type="Texture2D" uid="uid://dik6pjwa24674" path="res://Assetsz/City Background/road marking.png" id="4_db1sq"]
+[ext_resource type="PackedScene" uid="uid://dh6s8y0wpp024" path="res://Assetsz/boss-1/boss-1.tscn" id="5_lly8d"]
+[ext_resource type="Texture2D" uid="uid://pq5mkvc0wqb6" path="res://Assetsz/hero.png" id="6_rwma0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_artxx"]
 load_path = "res://.godot/imported/City Foreground.png-ddf0d61108045b051df2f728fd726f62.ctex"

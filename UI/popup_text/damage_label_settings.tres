@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://6mk6jn7s1776"]
 
-[ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assets/Fonts/Gugi-Regular.ttf" id="1_srh3j"]
+[ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assetsz/Fonts/Gugi-Regular.ttf" id="1_srh3j"]
 
 [resource]
 font = ExtResource("1_srh3j")
