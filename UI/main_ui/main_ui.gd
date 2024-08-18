@@ -1,5 +1,5 @@
 extends CanvasLayer
-enum FRIEND_TYPES {ADDING, MULTIPLYING}
+enum FRIEND_TYPES {ADDING, MULTIPLYING, ADDING2, EXPO}
 @onready var hand: Node = $Hand
 @onready var unleash_button: Button = $UnleashButton
 
@@ -24,9 +24,9 @@ func generate_hand():
 	add_to_hand(FRIEND_TYPES.ADDING)
 	add_to_hand(FRIEND_TYPES.ADDING)
 	add_to_hand(FRIEND_TYPES.MULTIPLYING)
-	add_to_hand(FRIEND_TYPES.MULTIPLYING)
-	add_to_hand(FRIEND_TYPES.MULTIPLYING)
-	add_to_hand(FRIEND_TYPES.ADDING)
+	add_to_hand(FRIEND_TYPES.ADDING2)
+	add_to_hand(FRIEND_TYPES.ADDING2)
+	add_to_hand(FRIEND_TYPES.EXPO)
 
 
 func add_to_hand(type: FRIEND_TYPES):
@@ -48,5 +48,6 @@ func add_to_set_up(type: FRIEND_TYPES):
 
 
 func _on_unleash_button_pressed() -> void:
-	GameManager.run_pipeline_step()
+	hand.visible = false
+	GameManager.start_full_pipeline()
 	unleash_button.queue_free()

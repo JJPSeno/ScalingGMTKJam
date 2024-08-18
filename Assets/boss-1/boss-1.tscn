@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh6s8y0wpp024"]
+[gd_scene load_steps=7 format=3 uid="uid://dnxnwaxwluskk"]
 
+[ext_resource type="Script" path="res://Assets/boss-1/boss_1.gd" id="1_j2ear"]
 [ext_resource type="Texture2D" uid="uid://btpv34y7dhsdx" path="res://Assets/boss-1/boss-1.png" id="1_nbj14"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3n2t"]
@@ -20,6 +21,7 @@ region = Rect2(18, 48, 234, 116)
 
 [node name="Boss-1-sample" type="Node2D"]
 position = Vector2(0, -25)
+script = ExtResource("1_j2ear")
 
 [node name="Claw Limb5" type="Sprite2D" parent="."]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)

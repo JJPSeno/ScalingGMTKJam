@@ -13,3 +13,8 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 label_settings = ExtResource("2_4ki4w")
+
+[node name="ClearTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ClearTimer" to="." method="_on_clear_timer_timeout"]

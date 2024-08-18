@@ -1,42 +1,66 @@
 extends Node
 
 const MAX_HAND_SIZE = 1
-
+const MAX_INT = 9223372036854775807
 signal set_up_card(type: int)
 signal trigged_pipeline_step(pos: Vector2)
+signal damage_changed(current_damage: int)
+signal pipeline_final_step
 
 @export var isDebug := true
-enum FRIEND_TYPES {ADDING, MULTIPLYING}
+enum FRIEND_TYPES {ADDING, MULTIPLYING, ADDING2, EXPO}
 
 var base_card = preload("res://Cards/base_card.tscn")
 var base_friend = preload("res://Friends/base_friend.tscn")
 
 var baseballer_sprite = preload("res://Assets/baseballer.png")
 var witch_sprite = preload("res://Assets/witch.png")
+var bazookaneer_sprite = preload("res://Assets/bazookaneer.png")
+var buddhist_sprite = preload("res://Assets/buddhist.png")
 
 var friends_dictionary = {
 	FRIEND_TYPES.ADDING: {
-		"friend_name": "Adding Friend",
+		"friend_name": "Batter",
 		"sprite": baseballer_sprite,
-		"description": "Add 10 damage",
+		"description": "Reliable Damage",
 		"cost": "2",
 		"type": FRIEND_TYPES.ADDING
 	},
 	FRIEND_TYPES.MULTIPLYING: {
-		"friend_name": "Multiplying Friend",
+		"friend_name": "Witch",
 		"sprite": witch_sprite,
-		"description": "Multiply damage by 2",
+		"description": "Force multiplier",
 		"cost": "3",
 		"type": FRIEND_TYPES.MULTIPLYING
+	},
+	FRIEND_TYPES.ADDING2: {
+		"friend_name": "Bazookaneer",
+		"sprite": bazookaneer_sprite,
+		"description": "BEEG DEEPS",
+		"cost": "3",
+		"type": FRIEND_TYPES.ADDING2
+	},
+	FRIEND_TYPES.EXPO: {
+		"friend_name": "Buddhist",
+		"sprite": buddhist_sprite,
+		"description": "For those who believe",
+		"cost": "3",
+		"type": FRIEND_TYPES.EXPO
 	},
 }
 
 enum BOSSES {CRAB, DRAGON}
-
 # element interface is { "type": FRIEND_TYPES, "position": Vector2 }
 var pipeline_queue = []
-
+var running_pipeline = []
+var is_pipeline_locked = false
 var current_damage := 0
+var timer: Timer
+var can_run_step = true
+var rng
+
+func _ready() -> void:
+	rng = RandomNumberGenerator.new()
 
 func _process(_delta)-> void:
 	if isDebug:
@@ -63,13 +87,50 @@ func generate_friend(type: int) -> Friend:
 	return return_friend
 
 
-func run_pipeline_step():
-	if pipeline_queue.is_empty():
-		return
-	var step = pipeline_queue.pop_front()
+func run_pipeline_step(step):
 	match step.type:
 		FRIEND_TYPES.ADDING:
-			current_damage += 10
+			current_damage += rng.randi_range(100, 1500)
 		FRIEND_TYPES.MULTIPLYING:
-			current_damage *= 2
+			current_damage *= rng.randi_range(200, 300)
+		FRIEND_TYPES.ADDING2:
+			current_damage += rng.randi_range(10000, 200000)
+		FRIEND_TYPES.EXPO:
+			current_damage = int(pow(current_damage, 2.0))
+	prints("current damage", current_damage)
+	prints("queue: ", pipeline_queue)
+	prints("step: ", step)
+	emit_signal("damage_changed", current_damage)
 	emit_signal("trigged_pipeline_step", step.position)
+
+
+func start_full_pipeline():
+	is_pipeline_locked = true
+	running_pipeline = pipeline_queue
+	generate_queue_timer()
+	if running_pipeline.size() > 0:
+		run_pipeline_step(running_pipeline.pop_front())
+	else:
+		end_full_pipeline()
+
+func end_full_pipeline():
+	emit_signal("damage_changed", current_damage)
+	timer.queue_free()
+	is_pipeline_locked = false
+	pipeline_queue = []
+	current_damage = 0
+	emit_signal("pipeline_final_step")
+
+func generate_queue_timer():
+	timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 1.0
+	timer.one_shot = false
+	timer.start()
+	timer.connect("timeout", _on_queue_timer_timeout)
+
+func _on_queue_timer_timeout() -> void:
+	if running_pipeline.size() > 0:
+		run_pipeline_step(running_pipeline.pop_front())
+	else:
+		end_full_pipeline()
