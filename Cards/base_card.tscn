@@ -52,7 +52,7 @@ keep_pressed_outside = true
 script = ExtResource("1_e7lnp")
 name_label = NodePath("CardContainer/MarginContainer/VBoxContainer/NameLabel")
 friend_sprite = NodePath("CardContainer/MarginContainer/VBoxContainer/Picture Frame/FriendSprite")
-description_label = NodePath("CardContainer/MarginContainer/VBoxContainer/DescriptionLabel")
+description_label = NodePath("CardContainer/MarginContainer/VBoxContainer/Control/DescriptionLabel")
 cost_label = NodePath("Cost Panel/CostLabel")
 
 [node name="Background" type="Panel" parent="."]
@@ -86,7 +86,7 @@ theme_override_constants/separation = 20
 
 [node name="NameLabel" type="Label" parent="CardContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Tihs is a labelasdasd"
+text = "This is a label"
 label_settings = SubResource("LabelSettings_h8cgu")
 horizontal_alignment = 1
 
@@ -107,11 +107,24 @@ grow_vertical = 2
 texture = ExtResource("3_5s86w")
 stretch_mode = 5
 
-[node name="DescriptionLabel" type="Label" parent="CardContainer/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="CardContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "asdasdasdasd"
+
+[node name="DescriptionLabel" type="Label" parent="CardContainer/MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is a card description"
 label_settings = SubResource("LabelSettings_y0h1l")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
 
 [node name="Cost Panel" type="Panel" parent="."]
 visible = false
