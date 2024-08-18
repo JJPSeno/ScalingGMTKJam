@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8mmejdi31xr3"
-path="res://.godot/imported/bazookaneer.png-2257154a6d90e3918a8470719ce06cb5.ctex"
+uid="uid://sj3bqppaly3g"
+path="res://.godot/imported/buddhist.png-8f64e92bcb24eb4e0cf11758289c2b2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assetsz/bazookaneer.png"
-dest_files=["res://.godot/imported/bazookaneer.png-2257154a6d90e3918a8470719ce06cb5.ctex"]
+source_file="res://Assets/buddhist.png"
+dest_files=["res://.godot/imported/buddhist.png-8f64e92bcb24eb4e0cf11758289c2b2b.ctex"]
 
 [params]
 

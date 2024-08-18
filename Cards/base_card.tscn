@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://deyqfiqqlobte"]
 
 [ext_resource type="Script" path="res://Cards/base_card.gd" id="1_e7lnp"]
-[ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assetsz/Fonts/Gugi-Regular.ttf" id="2_r1scp"]
+[ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assets/Fonts/Gugi-Regular.ttf" id="2_r1scp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q51jr"]
 bg_color = Color(0, 0.404822, 0.89, 1)

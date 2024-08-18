@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8yi34lnpdemj"
-path="res://.godot/imported/Ruined City Background Preview.png-9be3342b8a3833daf3a73dbe4dd30683.ctex"
+uid="uid://cxnbgjpajt1r4"
+path="res://.godot/imported/City Background.png-fa5a5aef176108522b9c761c78bc3df6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assetsz/City Background/Ruined City Background Preview.png"
-dest_files=["res://.godot/imported/Ruined City Background Preview.png-9be3342b8a3833daf3a73dbe4dd30683.ctex"]
+source_file="res://Assets/City Background/City Background.png"
+dest_files=["res://.godot/imported/City Background.png-fa5a5aef176108522b9c761c78bc3df6.ctex"]
 
 [params]
 

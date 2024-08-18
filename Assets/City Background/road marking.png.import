@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bycole5phgy65"
-path="res://.godot/imported/baseballer.png-e68da0d656d24ae473b7df4aebbe3278.ctex"
+uid="uid://dik6pjwa24674"
+path="res://.godot/imported/road marking.png-75bf33b5b11c78706de4248a2ac1849e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assetsz/baseballer.png"
-dest_files=["res://.godot/imported/baseballer.png-e68da0d656d24ae473b7df4aebbe3278.ctex"]
+source_file="res://Assets/City Background/road marking.png"
+dest_files=["res://.godot/imported/road marking.png-75bf33b5b11c78706de4248a2ac1849e.ctex"]
 
 [params]
 
