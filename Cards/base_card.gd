@@ -14,24 +14,24 @@ var card_type
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    name_label.text = card_name
-    friend_sprite.texture = sprite
-    description_label.text = description
-    cost_label.text = cost
+	name_label.text = card_name
+	friend_sprite.texture = sprite
+	description_label.text = description
+	cost_label.text = cost
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    pass
+	pass
 
 
 func _on_pressed() -> void:
-    GameManager.emit_signal("set_up_card",card_type)
-    queue_free()
+	GameManager.emit_signal("set_up_card",card_type)
+	queue_free()
 
 
 func _on_mouse_entered() -> void:
-    self.scale = Vector2(1.02, 1.02)
+	self.scale = Vector2(1.02, 1.02)
 
 
 func _on_mouse_exited() -> void:
-    self.scale = Vector2(1.0, 1.0)
+	self.scale = Vector2(1.0, 1.0)

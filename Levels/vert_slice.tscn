@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxgg8uj06o5e3"]
+[gd_scene load_steps=4 format=3 uid="uid://cxgg8uj06o5e3"]
 
-[ext_resource type="PackedScene" uid="uid://bv10sexfym2kn" path="res://UI/main_ui/main_ui.tscn" id="2_56u7l"]
-[ext_resource type="PackedScene" uid="uid://cvu5yplxtrina" path="res://Boss/boss.tscn" id="2_nkgsw"]
+[ext_resource type="Script" path="res://Levels/vert_slice.gd" id="1_6lbji"]
+[ext_resource type="PackedScene" uid="uid://bo8popj5wfx3y" path="res://UI/base_main_ui/base_main_ui.tscn" id="2_ev33m"]
+[ext_resource type="PackedScene" path="res://Assets/boss-1/boss-1.tscn" id="2_ke7er"]
 
-[node name="VertSlice" type="Node2D"]
+[node name="VertSlice" type="Node2D" node_paths=PackedStringArray("boss")]
+script = ExtResource("1_6lbji")
+boss = NodePath("Boss-1-sample")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 325)
+position_smoothing_enabled = true
 
-[node name="Boss" parent="." instance=ExtResource("2_nkgsw")]
-position = Vector2(358, -60)
+[node name="BaseMainUI" parent="." node_paths=PackedStringArray("set_up") instance=ExtResource("2_ev33m")]
+set_up = NodePath("../SetUp")
 
-[node name="MainUI" parent="." instance=ExtResource("2_56u7l")]
+[node name="Boss-1-sample" parent="." instance=ExtResource("2_ke7er")]
+position = Vector2(942, 221)
+
+[node name="SetUp" type="Node2D" parent="."]
+
+[node name="PipelineCutsceneTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="PipelineCutsceneTimer" to="." method="_on_pipeline_cutscene_timer_timeout"]

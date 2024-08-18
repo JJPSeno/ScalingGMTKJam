@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8yi34lnpdemj"
-path="res://.godot/imported/Ruined City Background Preview.png-c2d4f5e1e5a270d924d2d4d315db839f.ctex"
+uid="uid://c35720b6tp0jd"
+path="res://.godot/imported/bazookaneer.png-bfffc2b64932873a53cf3ce45b06a030.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/City Background/Ruined City Background Preview.png"
-dest_files=["res://.godot/imported/Ruined City Background Preview.png-c2d4f5e1e5a270d924d2d4d315db839f.ctex"]
+source_file="res://Assets/bazookaneer.png"
+dest_files=["res://.godot/imported/bazookaneer.png-bfffc2b64932873a53cf3ce45b06a030.ctex"]
 
 [params]
 

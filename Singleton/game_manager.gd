@@ -3,6 +3,7 @@ extends Node
 const MAX_HAND_SIZE = 1
 
 signal set_up_card(type: int)
+signal trigged_pipeline_step(pos: Vector2)
 
 @export var isDebug := true
 enum FRIEND_TYPES {ADDING, MULTIPLYING}
@@ -32,11 +33,10 @@ var friends_dictionary = {
 
 enum BOSSES {CRAB, DRAGON}
 
-var cards_in_hand = []
-var cards_in_set_up = []
-var cards_in_field = []
+# element interface is{ "type": FRIEND_TYPES, "position": Vector2 }
+var pipeline_queue = []
 
-var current_damage : int
+var current_damage := 0
 
 func _process(_delta)-> void:
 	if isDebug:
@@ -48,31 +48,36 @@ func _process(_delta)-> void:
 
 func generate_card(type: int) -> Card:
 	var return_card = base_card.instantiate()
-	match type:
-		FRIEND_TYPES.ADDING:
-			return_card.card_name = friends_dictionary[FRIEND_TYPES.ADDING].friend_name
-			return_card.sprite = friends_dictionary[FRIEND_TYPES.ADDING].sprite
-			return_card.description = friends_dictionary[FRIEND_TYPES.ADDING].description
-			return_card.cost = friends_dictionary[FRIEND_TYPES.ADDING].cost
-			return_card.card_type = friends_dictionary[FRIEND_TYPES.ADDING].type
-		FRIEND_TYPES.MULTIPLYING:
-			return_card.card_name = friends_dictionary[FRIEND_TYPES.MULTIPLYING].friend_name
-			return_card.sprite = friends_dictionary[FRIEND_TYPES.MULTIPLYING].sprite
-			return_card.description = friends_dictionary[FRIEND_TYPES.MULTIPLYING].description
-			return_card.cost = friends_dictionary[FRIEND_TYPES.MULTIPLYING].cost
-			return_card.card_type = friends_dictionary[FRIEND_TYPES.MULTIPLYING].type
-
+	return_card.card_name = friends_dictionary[type].friend_name
+	return_card.sprite = friends_dictionary[type].sprite
+	return_card.description = friends_dictionary[type].description
+	return_card.cost = friends_dictionary[type].cost
+	return_card.card_type = friends_dictionary[type].type
 	return return_card
+
 
 func generate_friend(type: int) -> Friend:
 	var return_friend = base_friend.instantiate()
-	match type:
-		FRIEND_TYPES.ADDING:
-			return_friend.friend_type = friends_dictionary[FRIEND_TYPES.ADDING].type
-			return_friend.sprite = friends_dictionary[FRIEND_TYPES.ADDING].sprite
-		FRIEND_TYPES.MULTIPLYING:
-			return_friend.friend_type = friends_dictionary[FRIEND_TYPES.MULTIPLYING].type
-			return_friend.sprite = friends_dictionary[FRIEND_TYPES.MULTIPLYING].sprite
-		
+	return_friend.friend_type = type
+	return_friend.sprite = friends_dictionary[type].sprite
 	return return_friend
-	
+
+
+func run_full_pipeline():
+	current_damage = 0
+	prints("pileline queue: ", pipeline_queue)
+	while pipeline_queue.size() > 0:
+		run_pipeline_step()
+	prints("current damage: ", current_damage)
+
+
+func run_pipeline_step():
+	if pipeline_queue.is_empty():
+		return
+	var step = pipeline_queue.pop_front()
+	match step.type:
+		FRIEND_TYPES.ADDING:
+			current_damage += 10
+		FRIEND_TYPES.MULTIPLYING:
+			current_damage *= 2
+	emit_signal("trigged_pipeline_step", step.position)
