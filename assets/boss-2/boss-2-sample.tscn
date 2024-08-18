@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://bufl5poijlgx8"]
+
+[ext_resource type="Texture2D" uid="uid://cf5dn865g0m0o" path="res://assets/City Background/Sky.png" id="1_oowhs"]
+[ext_resource type="Texture2D" uid="uid://cxnbgjpajt1r4" path="res://assets/City Background/City Background.png" id="2_p4je0"]
+[ext_resource type="Texture2D" uid="uid://bygk20l5q3apq" path="res://assets/City Background/City Foreground.png" id="3_wfsys"]
+[ext_resource type="PackedScene" uid="uid://1ohkp7rj2mvp" path="res://assets/boss-2/boss-2.tscn" id="5_x7ty7"]
+[ext_resource type="Texture2D" uid="uid://pq5mkvc0wqb6" path="res://assets/hero.png" id="6_pbshp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_63l4v"]
+load_path = "res://.godot/imported/City Background.png-683145fa30ae771cd2d0124b672ebe95.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7lysg"]
+load_path = "res://.godot/imported/road marking.png-6d2df0a1b2f3cdcf56a0b6b4813e829d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_artxx"]
+load_path = "res://.godot/imported/City Foreground.png-ddf0d61108045b051df2f728fd726f62.ctex"
+
+[node name="boss-2-sample" type="Node2D"]
+position = Vector2(0, -79)
+
+[node name="Sky" type="Sprite2D" parent="."]
+texture_repeat = 3
+position = Vector2(563, 405)
+scale = Vector2(2.48229, 0.82375)
+texture = ExtResource("1_oowhs")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.21154, 0.247586, 0.301335, 1)
+polygon = PackedVector2Array(-37, 600, -45, 753, 1257, 744, 1232, 600)
+
+[node name="City BG2" type="Sprite2D" parent="."]
+modulate = Color(0.605274, 0.605274, 0.605274, 1)
+texture_repeat = 3
+position = Vector2(578, 380)
+scale = Vector2(0.1439, 0.1439)
+texture = SubResource("CompressedTexture2D_63l4v")
+region_enabled = true
+region_rect = Rect2(-3584, 187, 8384, 1029)
+
+[node name="City BG" type="Sprite2D" parent="."]
+texture_repeat = 3
+position = Vector2(554, 467)
+scale = Vector2(0.284025, 0.284025)
+texture = ExtResource("2_p4je0")
+region_enabled = true
+region_rect = Rect2(-1224, 187, 4008, 613)
+
+[node name="City FG" type="Sprite2D" parent="."]
+texture_repeat = 3
+position = Vector2(481, 533)
+scale = Vector2(0.3378, 0.3378)
+texture = ExtResource("3_wfsys")
+region_enabled = true
+region_rect = Rect2(-1224, 187, 3002, 613)
+
+[node name="Road Marking" type="Sprite2D" parent="."]
+modulate = Color(0.60933, 0.60933, 0.60933, 1)
+texture_repeat = 3
+position = Vector2(603, 678)
+scale = Vector2(0.454, 0.454)
+texture = SubResource("CompressedTexture2D_7lysg")
+region_enabled = true
+region_rect = Rect2(0, 0, 2720, 32)
+
+[node name="Boss-2" parent="." instance=ExtResource("5_x7ty7")]
+position = Vector2(1127, 629)
+
+[node name="City Front Most" type="Sprite2D" parent="."]
+modulate = Color(0.101961, 0.101961, 0.101961, 0.85098)
+texture_repeat = 3
+position = Vector2(546, 864)
+scale = Vector2(1.65532, 1.65532)
+texture = SubResource("CompressedTexture2D_artxx")
+region_enabled = true
+region_rect = Rect2(76, 187, 1012, 613)
+
+[node name="Hero" type="Sprite2D" parent="."]
+position = Vector2(149, 670)
+scale = Vector2(0.0760923, 0.0760923)
+texture = ExtResource("6_pbshp")
