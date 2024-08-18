@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://1ohkp7rj2mvp"]
+
+[ext_resource type="Texture2D" uid="uid://dcf3k6i0d55f7" path="res://assets/boss-2/boss-2.png" id="1_vfhvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qchy"]
+atlas = ExtResource("1_vfhvl")
+region = Rect2(570, 1024, 382, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exngo"]
+atlas = ExtResource("1_vfhvl")
+region = Rect2(112, 76, 912, 716)
+
+[node name="Boss-2" type="Node2D"]
+
+[node name="Arm BG" type="Sprite2D" parent="."]
+modulate = Color(0.466181, 0.466181, 0.466181, 1)
+position = Vector2(-172, -131)
+scale = Vector2(0.68, 0.68)
+texture = SubResource("AtlasTexture_2qchy")
+
+[node name="Head" type="Sprite2D" parent="."]
+modulate = Color(0.91664, 0.91664, 0.91664, 1)
+position = Vector2(-318, -361)
+texture = SubResource("AtlasTexture_exngo")
+
+[node name="Arm FG" type="Sprite2D" parent="."]
+position = Vector2(-132, -38)
+texture = SubResource("AtlasTexture_2qchy")
