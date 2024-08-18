@@ -1,10 +1,11 @@
 extends Button
 class_name Card
 
-@onready var name_label: Label = $CardContainer/MarginContainer/VBoxContainer/NameLabel
-@onready var friend_sprite: TextureRect = $CardContainer/MarginContainer/VBoxContainer/FriendSprite
-@onready var description_label: Label = $CardContainer/MarginContainer/VBoxContainer/DescriptionLabel
-@onready var cost_label: Label = $Panel/CostLabel
+@export_group("Internals")
+@export var name_label: Label
+@export var friend_sprite: TextureRect
+@export var description_label: Label
+@export var cost_label: Label
 
 var card_name
 var sprite

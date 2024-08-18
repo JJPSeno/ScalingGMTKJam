@@ -5,6 +5,13 @@
 [node name="MainUI" type="CanvasLayer"]
 script = ExtResource("1_p6rc8")
 
-[node name="Hand" type="Node" parent="."]
+[node name="Hand" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SetUp" type="Node" parent="."]

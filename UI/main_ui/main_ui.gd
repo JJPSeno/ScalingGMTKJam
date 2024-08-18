@@ -31,7 +31,6 @@ func generate_hand():
 func add_to_hand(type: FRIEND_TYPES):
     var card_to_add = GameManager.generate_card(type)
     card_to_add.position = hand_pos
-    hand_pos.x += 194
     hand.add_child(card_to_add)
 
 
