@@ -36,6 +36,7 @@ outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Base Card Container" type="Control" node_paths=PackedStringArray("transformee", "name_label", "friend_sprite", "description_label", "cost_label")]
+clip_contents = true
 custom_minimum_size = Vector2(200, 300)
 layout_mode = 3
 anchors_preset = 8
