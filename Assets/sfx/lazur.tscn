@@ -45,7 +45,7 @@ position = Vector2(89, 0)
 texture = SubResource("AtlasTexture_wrj5i")
 
 [node name="Tail Outie" type="Sprite2D" parent="Modulate Container"]
-position = Vector2(2523.75, 0)
+position = Vector2(2520.75, 0)
 scale = Vector2(69.5074, 1)
 texture = SubResource("AtlasTexture_at8w7")
 region_rect = Rect2(0, 0, 1116, 168)
@@ -58,7 +58,7 @@ position = Vector2(89, 0)
 texture = SubResource("AtlasTexture_1x6eo")
 
 [node name="Tail Innie" type="Sprite2D" parent="Base Color Container"]
-position = Vector2(2523.75, 0)
+position = Vector2(2520.75, 0)
 scale = Vector2(69.5074, 1)
 texture = SubResource("AtlasTexture_o3j8e")
 region_rect = Rect2(0, 0, 1116, 168)
