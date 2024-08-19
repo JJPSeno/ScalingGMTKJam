@@ -11,7 +11,9 @@ var last_pos : Vector2 = Vector2(-MARGIN, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hand.visible = false
 	GameManager.connect("set_up_card", add_to_set_up)
+	Transition.connect("transition_finished", show_hand)
 	generate_hand()
 
 
@@ -51,3 +53,7 @@ func _on_unleash_button_pressed() -> void:
 	hand.visible = false
 	GameManager.start_full_pipeline()
 	unleash_button.queue_free()
+	
+
+func show_hand():
+	hand.visible = true
