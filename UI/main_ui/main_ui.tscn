@@ -36,4 +36,23 @@ offset_right = 1135.0
 offset_bottom = 116.0
 text = "Unleash power of friendship"
 
+[node name="HealthComponent" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_right = 48.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="boss_name" type="Label" parent="HealthComponent"]
+layout_mode = 2
+text = "Boss Health:
+"
+horizontal_alignment = 1
+
+[node name="boss_health" type="Label" parent="HealthComponent"]
+layout_mode = 2
+horizontal_alignment = 1
+
 [connection signal="pressed" from="UnleashButton" to="." method="_on_unleash_button_pressed"]

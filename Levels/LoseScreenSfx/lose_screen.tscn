@@ -188,7 +188,6 @@ texture = ExtResource("2_dfps7")
 [node name="Ball of Death Container" type="Node2D" parent="."]
 unique_name_in_owner = true
 visible = false
-scale = Vector2(3.2, 3.2)
 
 [node name="Ball of death" type="Node2D" parent="Ball of Death Container"]
 

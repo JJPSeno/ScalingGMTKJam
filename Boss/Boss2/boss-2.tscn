@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://1ohkp7rj2mvp"]
+[gd_scene load_steps=5 format=3 uid="uid://1ohkp7rj2mvp"]
 
 [ext_resource type="Texture2D" uid="uid://dcf3k6i0d55f7" path="res://Assets/boss-2/boss-2.png" id="1_vfhvl"]
+[ext_resource type="Script" path="res://Boss/Boss2/boss_2.gd" id="1_wd3rj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qchy"]
 atlas = ExtResource("1_vfhvl")
@@ -11,6 +12,7 @@ atlas = ExtResource("1_vfhvl")
 region = Rect2(112, 76, 912, 716)
 
 [node name="Boss-2" type="Node2D"]
+script = ExtResource("1_wd3rj")
 
 [node name="Arm BG" type="Sprite2D" parent="."]
 modulate = Color(0.466181, 0.466181, 0.466181, 1)

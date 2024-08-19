@@ -3,17 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://cf5dn865g0m0o" path="res://Assets/City Background/Sky.png" id="1_oowhs"]
 [ext_resource type="Texture2D" uid="uid://cxnbgjpajt1r4" path="res://Assets/City Background/City Background.png" id="2_p4je0"]
 [ext_resource type="Texture2D" uid="uid://bygk20l5q3apq" path="res://Assets/City Background/City Foreground.png" id="3_wfsys"]
-[ext_resource type="PackedScene" uid="uid://1ohkp7rj2mvp" path="res://Assets/boss-2/boss-2.tscn" id="5_x7ty7"]
+[ext_resource type="PackedScene" uid="uid://1ohkp7rj2mvp" path="res://Boss/Boss2/boss-2.tscn" id="5_x7ty7"]
 [ext_resource type="Texture2D" uid="uid://pq5mkvc0wqb6" path="res://Assets/hero.png" id="6_pbshp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_63l4v"]
-load_path = "res://.godot/imported/City Background.png-683145fa30ae771cd2d0124b672ebe95.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7lysg"]
-load_path = "res://.godot/imported/road marking.png-6d2df0a1b2f3cdcf56a0b6b4813e829d.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_artxx"]
-load_path = "res://.godot/imported/City Foreground.png-ddf0d61108045b051df2f728fd726f62.ctex"
 
 [node name="boss-2-sample" type="Node2D"]
 position = Vector2(0, -79)

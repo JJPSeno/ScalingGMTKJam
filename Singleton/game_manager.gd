@@ -2,10 +2,17 @@ extends Node
 
 const MAX_HAND_SIZE = 1
 const MAX_INT = 9223372036854775807
+
 signal set_up_card(type: int)
 signal trigged_pipeline_step(pos: Vector2)
 signal damage_changed(current_damage: int)
 signal pipeline_final_step
+
+signal level1_cleared
+signal level1_failed
+
+signal level2_cleared
+signal level2_failed
 
 @export var isDebug := true
 enum FRIEND_TYPES {ADDING, MULTIPLYING, ADDING2, EXPO}
@@ -97,9 +104,7 @@ func run_pipeline_step(step):
 			current_damage += rng.randi_range(10000, 200000)
 		FRIEND_TYPES.EXPO:
 			current_damage = int(pow(current_damage, 2.0))
-	prints("current damage", current_damage)
-	prints("queue: ", pipeline_queue)
-	prints("step: ", step)
+
 	emit_signal("damage_changed", current_damage)
 	emit_signal("trigged_pipeline_step", step.position)
 
@@ -118,7 +123,6 @@ func end_full_pipeline():
 	timer.queue_free()
 	is_pipeline_locked = false
 	pipeline_queue = []
-	current_damage = 0
 	emit_signal("pipeline_final_step")
 
 func generate_queue_timer():

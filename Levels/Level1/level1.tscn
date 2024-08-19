@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxgg8uj06o5e3"]
+[gd_scene load_steps=10 format=3 uid="uid://cxgg8uj06o5e3"]
 
-[ext_resource type="Script" path="res://Levels/vert_slice.gd" id="1_6lbji"]
-[ext_resource type="PackedScene" uid="uid://bv10sexfym2kn" path="res://UI/main_ui/main_ui.tscn" id="2_56u7l"]
-[ext_resource type="PackedScene" uid="uid://dnxnwaxwluskk" path="res://Assets/boss-1/boss-1.tscn" id="2_ke7er"]
-[ext_resource type="PackedScene" uid="uid://c6f01171l21ov" path="res://Player/player.tscn" id="3_3pl80"]
-[ext_resource type="PackedScene" uid="uid://d0n6fp053mdjm" path="res://Assets/sfx/lazur.tscn" id="5_2dnxs"]
+[ext_resource type="Script" path="res://Levels/Level1/level1.gd" id="1_vy3dq"]
+[ext_resource type="PackedScene" uid="uid://dnxnwaxwluskk" path="res://Boss/Boss1/boss-1.tscn" id="2_kbker"]
+[ext_resource type="PackedScene" uid="uid://c6f01171l21ov" path="res://Player/player.tscn" id="3_h2i02"]
+[ext_resource type="PackedScene" uid="uid://bv10sexfym2kn" path="res://UI/main_ui/main_ui.tscn" id="4_a22dv"]
+[ext_resource type="PackedScene" uid="uid://d0n6fp053mdjm" path="res://Assets/sfx/lazur.tscn" id="5_g3kny"]
+[ext_resource type="PackedScene" uid="uid://c0qgenu3pn2j8" path="res://Levels/LoseScreenSfx/lose_screen.tscn" id="6_6d04o"]
 
 [sub_resource type="Animation" id="Animation_3pjha"]
 length = 0.001
@@ -64,7 +65,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Boss-1-sample")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -72,7 +73,7 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"die"
+"method": &"check_result"
 }]
 }
 
@@ -82,29 +83,35 @@ _data = {
 "fire_lazur": SubResource("Animation_27ici")
 }
 
-[node name="VertSlice" type="Node2D" node_paths=PackedStringArray("blast_marker")]
-script = ExtResource("1_6lbji")
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("blast_marker", "boss")]
+script = ExtResource("1_vy3dq")
 blast_marker = NodePath("BlastMarker")
+boss = NodePath("Boss-1")
+
+[node name="Lose Secreen Overlay" parent="." instance=ExtResource("6_6d04o")]
+position = Vector2(906, -150)
+rotation = -0.326994
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(488, 40)
 position_smoothing_enabled = true
 
-[node name="Boss-1-sample" parent="." instance=ExtResource("2_ke7er")]
+[node name="Boss-1" parent="." instance=ExtResource("2_kbker")]
 position = Vector2(947, -59)
 
 [node name="SetUp" type="Node2D" parent="."]
+position = Vector2(-58, -55)
 
-[node name="Player" parent="." instance=ExtResource("3_3pl80")]
+[node name="Player" parent="." instance=ExtResource("3_h2i02")]
 position = Vector2(598, 14)
 
-[node name="MainUI" parent="." node_paths=PackedStringArray("set_up") instance=ExtResource("2_56u7l")]
+[node name="MainUI" parent="." node_paths=PackedStringArray("set_up") instance=ExtResource("4_a22dv")]
 set_up = NodePath("../SetUp")
 
 [node name="BlastMarker" type="Marker2D" parent="."]
 position = Vector2(823, -28)
 
-[node name="Lazur" parent="." instance=ExtResource("5_2dnxs")]
+[node name="Lazur" parent="." instance=ExtResource("5_g3kny")]
 visible = false
 position = Vector2(621, -18)
 rotation = -0.473546

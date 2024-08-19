@@ -1,6 +1,6 @@
-extends Control
+extends Node2D
 
-var level1 = preload("res://Levels/Level1/level1.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,7 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:
-	Transition.transition()
-	await Transition.transition_full
-	get_tree().change_scene_to_packed(level1)
+func die():
+	queue_free()
