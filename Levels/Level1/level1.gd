@@ -9,6 +9,8 @@ enum FRIEND_TYPES {ADDING, MULTIPLYING, ADDING2, EXPO}
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var main_ui: CanvasLayer = $MainUI
 @onready var lose_secreen_overlay: Lose_Screen = $"Lose Secreen Overlay"
+@onready var win_screen: Win_Screen = $WinScreen
+
 var level1_hand = [
 	FRIEND_TYPES.ADDING,
 	FRIEND_TYPES.ADDING,
@@ -38,10 +40,14 @@ func pan_to_blast_marker():
 func check_result():
 	main_ui.hide_hand()
 	if GameManager.current_damage < BOSS_HEALTH:
+		main_ui.free_ui()
+		win_screen.free_ui()
 		lose_secreen_overlay.play_lose_animation()
 	else:
 		main_ui.populate_health_component(BOSS_NAME, max(BOSS_HEALTH-GameManager.current_damage,0))
 		kill_boss()
+		lose_secreen_overlay.free_ui()
+		win_screen.play_win_animation()
 	GameManager.current_damage = 0
 
 func kill_boss():

@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxgg8uj06o5e3"]
+[gd_scene load_steps=13 format=3 uid="uid://cxgg8uj06o5e3"]
 
 [ext_resource type="Script" path="res://Levels/Level1/level1.gd" id="1_vy3dq"]
+[ext_resource type="PackedScene" uid="uid://dl8adhuy1y5py" path="res://Levels/ParallaxBG/parallax_background.tscn" id="2_cbml1"]
 [ext_resource type="PackedScene" uid="uid://dnxnwaxwluskk" path="res://Boss/Boss1/boss-1.tscn" id="2_kbker"]
+[ext_resource type="PackedScene" uid="uid://bkfjbv5cs2vhy" path="res://Levels/WinScreen/win_screen.tscn" id="3_gcw1i"]
 [ext_resource type="PackedScene" uid="uid://c6f01171l21ov" path="res://Player/player.tscn" id="3_h2i02"]
 [ext_resource type="PackedScene" uid="uid://bv10sexfym2kn" path="res://UI/main_ui/main_ui.tscn" id="4_a22dv"]
+[ext_resource type="PackedScene" uid="uid://ckust30s78bre" path="res://Levels/Level2/level2.tscn" id="4_gwp83"]
 [ext_resource type="PackedScene" uid="uid://d0n6fp053mdjm" path="res://Assets/sfx/lazur.tscn" id="5_g3kny"]
 [ext_resource type="PackedScene" uid="uid://c0qgenu3pn2j8" path="res://Levels/LoseScreenSfx/lose_screen.tscn" id="6_6d04o"]
 
@@ -88,9 +91,14 @@ script = ExtResource("1_vy3dq")
 blast_marker = NodePath("BlastMarker")
 boss = NodePath("Boss-1")
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_cbml1")]
+
 [node name="Lose Secreen Overlay" parent="." instance=ExtResource("6_6d04o")]
 position = Vector2(906, -150)
 rotation = -0.326994
+
+[node name="WinScreen" parent="." instance=ExtResource("3_gcw1i")]
+next_scene = ExtResource("4_gwp83")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(488, 40)

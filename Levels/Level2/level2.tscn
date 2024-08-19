@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckust30s78bre"]
+[gd_scene load_steps=11 format=3 uid="uid://ckust30s78bre"]
 
 [ext_resource type="Script" path="res://Levels/Level2/level2.gd" id="1_72qyh"]
+[ext_resource type="PackedScene" uid="uid://dl8adhuy1y5py" path="res://Levels/ParallaxBG/parallax_background.tscn" id="2_phkpr"]
 [ext_resource type="PackedScene" uid="uid://1ohkp7rj2mvp" path="res://Boss/Boss2/boss-2.tscn" id="3_6x6xc"]
 [ext_resource type="PackedScene" uid="uid://c6f01171l21ov" path="res://Player/player.tscn" id="3_50bh4"]
 [ext_resource type="PackedScene" uid="uid://bv10sexfym2kn" path="res://UI/main_ui/main_ui.tscn" id="4_t5vg7"]
@@ -88,7 +89,11 @@ script = ExtResource("1_72qyh")
 blast_marker = NodePath("BlastMarker")
 boss = NodePath("Boss-2")
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_phkpr")]
+
 [node name="Lose Secreen Overlay" parent="." instance=ExtResource("6_mip15")]
+position = Vector2(884, -256)
+rotation = -0.884496
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(488, 40)
@@ -96,7 +101,8 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="Boss-2" parent="." instance=ExtResource("3_6x6xc")]
-position = Vector2(1192, -44)
+position = Vector2(2032, 156)
+scale = Vector2(1.7, 1.7)
 
 [node name="SetUp" type="Node2D" parent="."]
 position = Vector2(-58, -55)

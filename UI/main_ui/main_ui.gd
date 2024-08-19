@@ -73,6 +73,11 @@ func show_hand():
 func hide_hand():
 	hand.visible = false
 
+
+func free_ui():
+	queue_free()
+
+
 func _on_unleash_button_pressed() -> void:
 	GameManager.start_full_pipeline()
 	unleash_button.queue_free()

@@ -7,3 +7,11 @@ class_name Lose_Screen
 
 func play_lose_animation() -> void:
 	animation_player.play("fire_lazur")
+
+
+func free_ui():
+	queue_free()
+
+
+func _on_reset_button_pressed() -> void:
+	get_tree().reload_current_scene()

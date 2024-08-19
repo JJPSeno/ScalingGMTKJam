@@ -37,6 +37,7 @@ func pan_to_blast_marker():
 func check_result():
 	main_ui.hide_hand()
 	if GameManager.current_damage < BOSS_HEALTH:
+		main_ui.free_ui()
 		lose_secreen_overlay.play_lose_animation()
 	else:
 		main_ui.populate_health_component(BOSS_NAME, max(BOSS_HEALTH-GameManager.current_damage,0))

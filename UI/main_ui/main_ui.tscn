@@ -26,9 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="SetUp" type="Node2D" parent="."]
-position = Vector2(-50, 186)
-
 [node name="UnleashButton" type="Button" parent="."]
 offset_left = 908.0
 offset_top = 37.0
