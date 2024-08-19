@@ -24,6 +24,7 @@ atlas = ExtResource("1_a14pa")
 region = Rect2(282, 266, 68, 86)
 
 [node name="Lazur" type="Node2D"]
+scale = Vector2(0.01, 1)
 
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(2396.25, -14)

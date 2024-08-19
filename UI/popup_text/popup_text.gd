@@ -1,27 +1,31 @@
 extends Control
 
 @export var local_debug := false
-var damage : int:
-	set = set_damage
+@onready var clear_timer: Timer = $ClearTimer
+
+var damage: int
 
 var label_settings: LabelSettings = preload("res://UI/popup_text/damage_label_settings.tres")
 
 #region testing variables
 var cooldown := 0.1
-var TEST_mutable_damage := 9223372036854775807
+var TEST_mutable_damage := GameManager.MAX_INT
 #endregion
 
 @onready var label: Label = $Label
 
 func _ready() -> void:
-	if !local_debug:
-		set_damage(2322313123123121100)
-		label.text = format(damage)
-
+	GameManager.connect("damage_changed", show_damage)
 
 func _physics_process(delta):
 	if local_debug:
 		run_test(delta)
+
+
+func show_damage(damage: int):
+	if !local_debug:
+		label.text = format(damage)
+		clear_timer.start()
 
 
 func format(int_damage: int) -> String:
@@ -41,32 +45,29 @@ func format(int_damage: int) -> String:
 	return ret_string
 
 func set_juice_level(length: int) -> void:
-	label_settings.font_size = 16
+	label_settings.font_size = 16*2
 	label_settings.font_color = Color.WHITE_SMOKE
 	if length < 3:
 		return
 	elif length < 6:
-		label_settings.font_size = 24
+		label_settings.font_size = 24*2
 		label_settings.font_color = Color.LIGHT_SALMON
 	elif length < 9:
-		label_settings.font_size = 32
+		label_settings.font_size = 32*2
 		label_settings.font_color = Color.LIGHT_SALMON
 	elif length < 12:
-		label_settings.font_size = 32
+		label_settings.font_size = 32*2
 		label_settings.font_color = Color.ORANGE
 	elif length < 15:
-		label_settings.font_size = 40
+		label_settings.font_size = 40*2
 		label_settings.font_color = Color.ORANGE_RED
 	elif length < 19:
-		label_settings.font_size = 48
+		label_settings.font_size = 48*2
 		label_settings.font_color = Color.ORANGE_RED
 	else:
-		label_settings.font_size = 64
+		label_settings.font_size = 64*2
 		label_settings.font_color = Color.RED
 
-
-func set_damage(input_damage: int = 0) -> void:
-	damage = input_damage
 
 func run_test(delta):
 	cooldown -= delta
@@ -74,3 +75,7 @@ func run_test(delta):
 		label.text = format(TEST_mutable_damage)
 		TEST_mutable_damage = max(TEST_mutable_damage / 10, 0)
 		cooldown = 2.0
+
+
+func _on_clear_timer_timeout() -> void:
+	label.text = ""

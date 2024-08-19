@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv10sexfym2kn"]
+[gd_scene load_steps=3 format=3 uid="uid://bv10sexfym2kn"]
 
 [ext_resource type="Script" path="res://UI/main_ui/main_ui.gd" id="1_p6rc8"]
+[ext_resource type="PackedScene" uid="uid://bkgshedt2f77w" path="res://UI/popup_text/popup_text.tscn" id="2_p7cyu"]
 
 [node name="MainUI" type="CanvasLayer"]
 script = ExtResource("1_p6rc8")
+
+[node name="PopupText" parent="." instance=ExtResource("2_p7cyu")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.0
+offset_top = 140.0
+offset_right = -487.0
+offset_bottom = 140.0
+grow_horizontal = 2
 
 [node name="Hand" type="HBoxContainer" parent="."]
 anchors_preset = 14

@@ -52,15 +52,15 @@ func _process(delta: float) -> void:
 		
 	
 func _on_pressed() -> void:
-	if is_animating_out: return
-	
+	if GameManager.is_pipeline_locked \
+		or is_animating_out: return
 	is_animating_out = true
 	target_container_size = Vector2.ONE
 	GameManager.emit_signal("set_up_card",card_type)
 
 func _on_mouse_entered() -> void:
 	if is_animating_out: return
-	
+
 	var new_size = card_size * Vector2(1.25,1.25)
 	var new_scale = transformee.scale * Vector2(1.15,1.15)
 	target_container_size = new_size
