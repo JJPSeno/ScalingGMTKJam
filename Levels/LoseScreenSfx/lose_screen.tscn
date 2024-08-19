@@ -181,14 +181,14 @@ animation_player = NodePath("AnimationPlayer")
 gizmo_extents = 100.0
 
 [node name="White" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.631373)
+modulate = Color(1, 1, 1, 0)
 scale = Vector2(827.98, 467.6)
 texture = ExtResource("2_dfps7")
 
 [node name="Ball of Death Container" type="Node2D" parent="."]
 unique_name_in_owner = true
 visible = false
-scale = Vector2(0.5, 0.5)
+scale = Vector2(3.2, 3.2)
 
 [node name="Ball of death" type="Node2D" parent="Ball of Death Container"]
 
@@ -209,7 +209,7 @@ rotation = 3.14159
 scale = Vector2(1.69752, 1.69752)
 
 [node name="Lazur" parent="Lazur Container" instance=ExtResource("5_et0rv")]
-scale = Vector2(1, 1)
+visible = false
 
 [node name="Modulate Container" parent="Lazur Container/Lazur" index="1"]
 modulate = Color(0.921001, 0, 0.35161, 1)
@@ -224,6 +224,7 @@ autoplay = "RESET"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
