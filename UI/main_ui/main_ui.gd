@@ -1,7 +1,7 @@
 extends CanvasLayer
 enum FRIEND_TYPES {ADDING, MULTIPLYING, ADDING2, EXPO}
 @onready var hand: Node = $Hand
-@onready var unleash_button: Button = $UnleashButton
+@onready var unleash_button: Button = $MarginContainer/UnleashButton
 @onready var boss_name: Label = $HealthComponent/boss_name
 @onready var boss_health: Label = $HealthComponent/boss_health
 @export var set_up: Node2D

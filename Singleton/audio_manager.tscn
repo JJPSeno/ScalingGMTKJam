@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsk7y8mop2xaf"]
+
+[ext_resource type="Script" path="res://Singleton/audio_manager.gd" id="1_eyc3o"]
+[ext_resource type="AudioStream" uid="uid://b5jqaji15l1fw" path="res://Assets/music/Ludum Dare 38 - Track 4.wav" id="1_pfg8g"]
+[ext_resource type="AudioStream" uid="uid://mr5jcjie1vi" path="res://Assets/sfx/JDSherbert - Ultimate UI SFX Pack - Swipe - 2.ogg" id="3_aqejj"]
+[ext_resource type="AudioStream" uid="uid://bklj55ybitgw5" path="res://Assets/sfx/JDSherbert - Ultimate UI SFX Pack - Select - 2.ogg" id="4_ky0ek"]
+[ext_resource type="AudioStream" uid="uid://3bm6yqgmvaey" path="res://Assets/sfx/laser-zap-90575.mp3" id="5_eyqgt"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_eyc3o")
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_pfg8g")
+volume_db = -15.0
+autoplay = true
+
+[node name="sfx_card_hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aqejj")
+volume_db = -20.0
+
+[node name="sfx_card_play" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ky0ek")
+volume_db = -20.0
+
+[node name="sfx_lazer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_eyqgt")
+volume_db = -20.0

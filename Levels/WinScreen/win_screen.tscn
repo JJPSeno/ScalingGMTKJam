@@ -1,6 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkfjbv5cs2vhy"]
+[gd_scene load_steps=8 format=3 uid="uid://bkfjbv5cs2vhy"]
 
 [ext_resource type="Script" path="res://Levels/WinScreen/win_screen.gd" id="1_t8mvh"]
+[ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assets/Fonts/Gugi-Regular.ttf" id="2_g3fvh"]
+[ext_resource type="Theme" uid="uid://brun80ih5qkt3" path="res://UI/button_styles/button_theme.tres" id="2_l41kx"]
+
+[sub_resource type="Animation" id="Animation_imbov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.905882, 0.772549, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/CenterContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_n2wkq"]
 resource_name = "show_win_overlay"
@@ -29,56 +58,19 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Button:visible")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_imbov"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.905882, 0.772549, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/CenterContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Button:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [{
+"args": [],
+"method": &"show_label"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xotwc"]
@@ -86,6 +78,13 @@ _data = {
 "RESET": SubResource("Animation_imbov"),
 "show_win_overlay": SubResource("Animation_n2wkq")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1chd"]
+font = ExtResource("2_g3fvh")
+font_size = 24
+font_color = Color(1, 0.905882, 0.772549, 1)
+outline_size = 2
+outline_color = Color(0.1, 0.1, 0.1, 1)
 
 [node name="WinScreen" type="Node2D" node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_t8mvh")
@@ -125,21 +124,55 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 72
 text = "FRIENDSHIP PREVAILS!"
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 78.0
+offset_right = 20.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NextSceneButton" type="Button" parent="CanvasLayer/Control"]
 visible = false
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -47.0
-offset_top = 74.0
+offset_top = -15.5
 offset_right = 47.0
-offset_bottom = 105.0
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("2_l41kx")
 text = "Next Level"
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[node name="ThanksLabel" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -11.5
+offset_right = 85.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "THANKS FOR PLAYING"
+label_settings = SubResource("LabelSettings_x1chd")
+
+[connection signal="pressed" from="CanvasLayer/Control/NextSceneButton" to="." method="_on_button_pressed"]

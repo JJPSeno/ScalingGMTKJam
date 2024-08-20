@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbi4bbkirco8w"]
+[gd_scene load_steps=8 format=3 uid="uid://cbi4bbkirco8w"]
 
 [ext_resource type="Shader" path="res://UI/main_menu/main_menu.gdshader" id="1_hosav"]
 [ext_resource type="Script" path="res://UI/main_menu/main_menu.gd" id="1_vivxh"]
 [ext_resource type="Texture2D" uid="uid://dj03u68usbt6s" path="res://Assets/menu/PowerOfFriendshipBG.png" id="2_ul31d"]
+[ext_resource type="FontFile" uid="uid://bt13mfbf7jiat" path="res://Assets/Fonts/Gugi-Regular.ttf" id="4_t0jon"]
+[ext_resource type="Theme" uid="uid://brun80ih5qkt3" path="res://UI/button_styles/button_theme.tres" id="5_gp3io"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aipgd"]
 shader = ExtResource("1_hosav")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lsicc"]
+font = ExtResource("4_t0jon")
+font_size = 64
+font_color = Color(1, 0.905882, 0.772549, 1)
+outline_size = 12
+outline_color = Color(0.647059, 0.588235, 0.498039, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -37,12 +46,29 @@ grow_vertical = 2
 texture = ExtResource("2_ul31d")
 stretch_mode = 1
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 527.0
-offset_top = 278.0
-offset_right = 623.0
-offset_bottom = 309.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "THE POWER 
+OF FRIENDSHIP"
+label_settings = SubResource("LabelSettings_lsicc")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme = ExtResource("5_gp3io")
 text = "Start Game"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

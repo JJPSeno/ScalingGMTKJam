@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkhf76jesbcjk"]
+
+[ext_resource type="Script" path="res://UI/particles/particle.gd" id="1_vvp4g"]
+[ext_resource type="PackedScene" uid="uid://ceyhtr3ybe7mu" path="res://UI/particles/star_particles.tscn" id="2_oeq3c"]
+[ext_resource type="Texture2D" uid="uid://cxh8nd2t5hvem" path="res://Assets/particles/smaller_star.png" id="3_ocx6w"]
+
+[sub_resource type="Animation" id="Animation_owwi3"]
+resource_name = "emit_particle"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StarParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_58k8x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StarParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wcb3y"]
+_data = {
+"RESET": SubResource("Animation_58k8x"),
+"emit_particle": SubResource("Animation_owwi3")
+}
+
+[node name="particle" type="Node2D"]
+script = ExtResource("1_vvp4g")
+
+[node name="StarParticles" parent="." instance=ExtResource("2_oeq3c")]
+position = Vector2(57, -66)
+speed_scale = 1.0
+texture = ExtResource("3_ocx6w")
+emission_shape = 3
+emission_rect_extents = Vector2(150, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wcb3y")
+}

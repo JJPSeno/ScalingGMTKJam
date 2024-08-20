@@ -10,15 +10,22 @@ config_version=5
 
 [application]
 
-config/name="ScalingGMTKJam"
+config/name="POWER OF FRIENDSHIP!"
 run/main_scene="res://UI/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 0.905882, 0.772549, 1)
+boot_splash/image="res://Assets/particles/star.png"
+config/icon="res://Assets/hero.png"
 
 [autoload]
 
 GameManager="*res://Singleton/game_manager.tscn"
 Transition="*res://UI/transition/transition.tscn"
+AudioManager="*res://Singleton/audio_manager.tscn"
+
+[display]
+
+window/size/mode=2
 
 [input]
 

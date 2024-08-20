@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckust30s78bre"]
+[gd_scene load_steps=12 format=3 uid="uid://ckust30s78bre"]
 
 [ext_resource type="Script" path="res://Levels/Level2/level2.gd" id="1_72qyh"]
-[ext_resource type="PackedScene" uid="uid://dl8adhuy1y5py" path="res://Levels/ParallaxBG/parallax_background.tscn" id="2_phkpr"]
+[ext_resource type="PackedScene" uid="uid://bx5vqrq51udn0" path="res://Levels/ParallaxBG/level_background.tscn" id="2_5a7di"]
 [ext_resource type="PackedScene" uid="uid://1ohkp7rj2mvp" path="res://Boss/Boss2/boss-2.tscn" id="3_6x6xc"]
 [ext_resource type="PackedScene" uid="uid://c6f01171l21ov" path="res://Player/player.tscn" id="3_50bh4"]
+[ext_resource type="PackedScene" uid="uid://bkfjbv5cs2vhy" path="res://Levels/WinScreen/win_screen.tscn" id="3_trghh"]
 [ext_resource type="PackedScene" uid="uid://bv10sexfym2kn" path="res://UI/main_ui/main_ui.tscn" id="4_t5vg7"]
 [ext_resource type="PackedScene" uid="uid://d0n6fp053mdjm" path="res://Assets/sfx/lazur.tscn" id="5_wkql8"]
 [ext_resource type="PackedScene" uid="uid://c0qgenu3pn2j8" path="res://Levels/LoseScreenSfx/lose_screen.tscn" id="6_mip15"]
@@ -70,9 +71,12 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"play_sfx_lazer"
+}, {
 "args": [],
 "method": &"check_result"
 }]
@@ -89,37 +93,41 @@ script = ExtResource("1_72qyh")
 blast_marker = NodePath("BlastMarker")
 boss = NodePath("Boss-2")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("2_phkpr")]
+[node name="LevelBackground" parent="." instance=ExtResource("2_5a7di")]
+position = Vector2(0, -136)
 
 [node name="Lose Secreen Overlay" parent="." instance=ExtResource("6_mip15")]
-position = Vector2(884, -256)
-rotation = -0.884496
+position = Vector2(884, -386)
+rotation = -0.514292
+scale = Vector2(3, 3)
+
+[node name="WinScreen" parent="." instance=ExtResource("3_trghh")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(488, 40)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.3, 0.3)
 position_smoothing_enabled = true
 
 [node name="Boss-2" parent="." instance=ExtResource("3_6x6xc")]
-position = Vector2(2032, 156)
-scale = Vector2(1.7, 1.7)
+position = Vector2(2465, 156)
+scale = Vector2(2.3, 2.3)
 
 [node name="SetUp" type="Node2D" parent="."]
-position = Vector2(-58, -55)
+position = Vector2(-253, 105)
 
 [node name="Player" parent="." instance=ExtResource("3_50bh4")]
-position = Vector2(598, 14)
+position = Vector2(694, 262)
 
 [node name="MainUI" parent="." node_paths=PackedStringArray("set_up") instance=ExtResource("4_t5vg7")]
 set_up = NodePath("../SetUp")
 
 [node name="BlastMarker" type="Marker2D" parent="."]
-position = Vector2(823, -28)
+position = Vector2(803, -11)
 
 [node name="Lazur" parent="." instance=ExtResource("5_wkql8")]
 visible = false
-position = Vector2(621, -18)
-rotation = -0.473546
+position = Vector2(751, 220)
+rotation = -0.49082
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

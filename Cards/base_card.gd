@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 		
 	
 func _on_pressed() -> void:
+	AudioManager.sfx_card_play.play()
 	if GameManager.is_pipeline_locked \
 		or is_animating_out: return
 	is_animating_out = true
@@ -59,6 +60,7 @@ func _on_pressed() -> void:
 	GameManager.emit_signal("set_up_card",card_type)
 
 func _on_mouse_entered() -> void:
+	AudioManager.sfx_card_hover.play()
 	if is_animating_out: return
 
 	var new_size = card_size * Vector2(1.25,1.25)

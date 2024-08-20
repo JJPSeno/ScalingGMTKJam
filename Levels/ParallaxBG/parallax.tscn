@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl8adhuy1y5py"]
+
+[ext_resource type="Texture2D" uid="uid://cxnbgjpajt1r4" path="res://Assets/City Background/City Background.png" id="1_kxyoa"]
+[ext_resource type="Texture2D" uid="uid://bygk20l5q3apq" path="res://Assets/City Background/City Foreground.png" id="2_h8ngs"]
+
+[node name="Parallax" type="ParallaxBackground"]
+
+[node name="Background" type="ParallaxLayer" parent="."]
+position = Vector2(560, -372)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(1120, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Background"]
+position = Vector2(-5600, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Background"]
+position = Vector2(-4480, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Background"]
+position = Vector2(-3360, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Background"]
+position = Vector2(-2240, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Background"]
+position = Vector2(-1120, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background"]
+position = Vector2(4480, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background"]
+position = Vector2(3360, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background"]
+position = Vector2(2240, 0)
+texture = ExtResource("1_kxyoa")
+
+[node name="Foreground" type="ParallaxLayer" parent="."]
+position = Vector2(560, -228)
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Foreground"]
+position = Vector2(1120, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Foreground"]
+position = Vector2(-5600, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Foreground"]
+position = Vector2(-4480, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3360, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2240, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Foreground"]
+position = Vector2(-1120, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Foreground"]
+position = Vector2(4480, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Foreground"]
+position = Vector2(2240, 0)
+texture = ExtResource("2_h8ngs")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Foreground"]
+position = Vector2(3360, 0)
+texture = ExtResource("2_h8ngs")

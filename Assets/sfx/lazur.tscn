@@ -28,7 +28,7 @@ scale = Vector2(0.01, 1)
 
 [node name="Light" type="PointLight2D" parent="."]
 position = Vector2(2396.25, -14)
-scale = Vector2(10.499, 0.772917)
+scale = Vector2(300, 300)
 energy = 5.0
 texture = ExtResource("1_ym5vy")
 

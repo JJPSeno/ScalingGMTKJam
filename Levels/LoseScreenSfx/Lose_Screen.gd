@@ -12,6 +12,8 @@ func play_lose_animation() -> void:
 func free_ui():
 	queue_free()
 
+func play_sfx_lazer():
+	AudioManager.sfx_lazer.play()
 
 func _on_reset_button_pressed() -> void:
 	get_tree().reload_current_scene()

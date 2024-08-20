@@ -14,7 +14,7 @@ signal level1_failed
 signal level2_cleared
 signal level2_failed
 
-@export var isDebug := true
+@export var isDebug := false
 enum FRIEND_TYPES {ADDING, MULTIPLYING, ADDING2, EXPO}
 
 var base_card = preload("res://Cards/base_card.tscn")
@@ -97,14 +97,15 @@ func generate_friend(type: int) -> Friend:
 func run_pipeline_step(step):
 	match step.type:
 		FRIEND_TYPES.ADDING:
-			current_damage += rng.randi_range(100, 1500)
+			current_damage += rng.randi_range(1130, 2222)
 		FRIEND_TYPES.MULTIPLYING:
 			current_damage *= rng.randi_range(200, 300)
 		FRIEND_TYPES.ADDING2:
-			current_damage += rng.randi_range(10000, 200000)
+			current_damage += rng.randi_range(111111, 222222)
 		FRIEND_TYPES.EXPO:
-			current_damage = int(pow(current_damage, 2.0))
-
+			current_damage *= rng.randi_range(2000, 3000)
+	if signi(current_damage)<0:
+		current_damage = max(current_damage, MAX_INT)
 	emit_signal("damage_changed", current_damage)
 	emit_signal("trigged_pipeline_step", step.position)
 

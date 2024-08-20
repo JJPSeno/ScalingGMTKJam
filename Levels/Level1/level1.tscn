@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cxgg8uj06o5e3"]
 
 [ext_resource type="Script" path="res://Levels/Level1/level1.gd" id="1_vy3dq"]
-[ext_resource type="PackedScene" uid="uid://dl8adhuy1y5py" path="res://Levels/ParallaxBG/parallax_background.tscn" id="2_cbml1"]
+[ext_resource type="PackedScene" uid="uid://bx5vqrq51udn0" path="res://Levels/ParallaxBG/level_background.tscn" id="2_4uw8v"]
 [ext_resource type="PackedScene" uid="uid://dnxnwaxwluskk" path="res://Boss/Boss1/boss-1.tscn" id="2_kbker"]
 [ext_resource type="PackedScene" uid="uid://bkfjbv5cs2vhy" path="res://Levels/WinScreen/win_screen.tscn" id="3_gcw1i"]
 [ext_resource type="PackedScene" uid="uid://c6f01171l21ov" path="res://Player/player.tscn" id="3_h2i02"]
@@ -72,9 +72,12 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"play_sfx_lazer"
+}, {
 "args": [],
 "method": &"check_result"
 }]
@@ -91,7 +94,8 @@ script = ExtResource("1_vy3dq")
 blast_marker = NodePath("BlastMarker")
 boss = NodePath("Boss-1")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("2_cbml1")]
+[node name="LevelBackground" parent="." instance=ExtResource("2_4uw8v")]
+position = Vector2(-23, -204)
 
 [node name="Lose Secreen Overlay" parent="." instance=ExtResource("6_6d04o")]
 position = Vector2(906, -150)
@@ -108,20 +112,20 @@ position_smoothing_enabled = true
 position = Vector2(947, -59)
 
 [node name="SetUp" type="Node2D" parent="."]
-position = Vector2(-58, -55)
+position = Vector2(-130, 30)
 
 [node name="Player" parent="." instance=ExtResource("3_h2i02")]
-position = Vector2(598, 14)
+position = Vector2(442, 156)
 
 [node name="MainUI" parent="." node_paths=PackedStringArray("set_up") instance=ExtResource("4_a22dv")]
 set_up = NodePath("../SetUp")
 
 [node name="BlastMarker" type="Marker2D" parent="."]
-position = Vector2(823, -28)
+position = Vector2(684, 16)
 
 [node name="Lazur" parent="." instance=ExtResource("5_g3kny")]
 visible = false
-position = Vector2(621, -18)
+position = Vector2(635, 58)
 rotation = -0.473546
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

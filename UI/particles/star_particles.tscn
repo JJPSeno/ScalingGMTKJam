@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceyhtr3ybe7mu"]
+
+[ext_resource type="Texture2D" uid="uid://bdh2g7v7oovpx" path="res://Assets/particles/star.png" id="1_p12pa"]
+
+[sub_resource type="Curve" id="Curve_6p0qe"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.90411, 280.425), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="StarParticles" type="CPUParticles2D"]
+position = Vector2(0, -66)
+emitting = false
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+randomness = 0.15
+texture = ExtResource("1_p12pa")
+emission_shape = 1
+emission_sphere_radius = 14.9
+spread = 180.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 181.15
+initial_velocity_max = 195.15
+angular_velocity_curve = SubResource("Curve_6p0qe")
